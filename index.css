@@ -1,0 +1,155 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #1F2937; /* Background color */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Ensure full viewport height */
+    margin: 0;
+    color: #ffffff; /* Default text color */
+}
+
+.container {
+    background-color: #1F2937; /* Same as body background */
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    width: 90%; /* Responsive width */
+    max-width: 600px; /* Prevent container from becoming too wide */
+}
+
+h1 {
+    margin-bottom: 10px;
+    font-size: 24px;
+}
+
+.white-text {
+    color: #ffffff; /* White text for "Generate a" */
+}
+
+.green-text {
+    color: #4ADF86; /* Green text for "random password" */
+}
+
+p {
+    margin-bottom: 20px;
+    color: #D5D4D8; /* Light gray text for the paragraph */
+}
+
+button {
+    background-color: #10B981; /* Button background color */
+    color: #ffffff; /* White text inside the button */
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%; /* Full width */
+    max-width: 200px; /* Limit width on larger screens */
+}
+
+button:hover {
+    background-color: #0e9e6e; /* Slightly darker green on hover */
+}
+
+.password-container {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    gap: 10px; /* Space between password divs */
+}
+
+.password {
+    background-color: #273549;
+    padding: 10px;
+    border-radius: 5px;
+    font-family: monospace;
+    font-size: 18px;
+    color: #ffffff;
+    min-height: 20px;
+    line-height: 20px;
+    text-align: center;
+    flex: 1;
+    min-width: 45%;
+    box-sizing: border-box;
+    cursor: pointer; /* Indicate clickability */
+    position: relative; /* Needed for tooltip positioning */
+    transition: background-color 0.3s ease; /* Smooth transition for feedback */
+}
+
+/* New input container */
+.input-container {
+    margin-top: 20px;
+    text-align: left; /* Align text to the left */
+}
+
+.input-container label {
+    display: block; /* Make the label a block element */
+    margin-bottom: 8px; /* Space between label and input */
+    color: #D5D4D8; /* Light gray text for the label */
+    font-size: 14px;
+}
+
+.password-input {
+    background-color: #273549; /* Same as password div background */
+    color: #ffffff; /* White text for input */
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    font-family: monospace;
+    font-size: 16px;
+    width: 100%; /* Full width */
+    box-sizing: border-box; /* Include padding in width calculation */
+    text-align: center; /* Center the text */
+}
+
+.password-input:focus {
+    outline: none; /* Remove default focus outline */
+    border: 1px solid #4ADF86; /* Green border on focus */
+}
+
+/* Media Queries for further responsiveness */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 20px; /* Smaller font size for smaller screens */
+    }
+
+    button {
+        font-size: 14px; /* Smaller font size for smaller screens */
+    }
+
+    .password {
+        font-size: 16px; /* Smaller font size for smaller screens */
+        min-width: 100%; /* Full width on small screens */
+    }
+
+    .input-container label {
+        font-size: 12px; /* Smaller font size for smaller screens */
+    }
+
+    .password-input {
+        font-size: 14px; /* Smaller font size for smaller screens */
+    }
+}
+.password.copied {
+    background-color: #10B981; /* Change background color when copied */
+}
+.password-text {
+    display: block; /* Ensure the password text takes up the full width */
+}
+.copy-hint {
+    display: none; /* Hide by default */
+    position: absolute;
+    bottom: -25px; /* Position below the password div */
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 12px;
+    color: #D5D4D8; /* Light gray text */
+    background-color: #1F2937; /* Match the container background */
+    padding: 4px 8px;
+    border-radius: 4px;
+    white-space: nowrap; /* Prevent text from wrapping */
+}
+.password:hover .copy-hint {
+    display: block; /* Show the hint on hover */
+}
